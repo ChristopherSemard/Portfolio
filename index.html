@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher SEMARD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c52cbb9b58.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-desktop">
+            <a href="" class="nav-link">Accueil</a>
+            <a href="" class="nav-link">A propos</a>
+            <a href="" class="nav-link">Projets</a>
+            <a href="" class="nav-link">Contact</a>
+        </nav>
+        <div class="dark-mode" id="darkmode">
+            <em class="fa-solid fa-circle-half-stroke"></em>
+        </div>
+        <div class="nav-mobile">
+            <em class="fa-solid fa-bars"></em>
+        </div>
+        <nav class="nav-mobile-menu">
+            <a href="" class="nav-link">Accueil</a>
+            <a href="" class="nav-link">A propos</a>
+            <a href="" class="nav-link">Projets</a>
+            <a href="" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <div id="photo-profil" class="design">
+                <img    srcset="   ./images/desktop/profil-500_x_500.jfif 500w,
+                                ./images/mobile/profil-350_x_350.jfif 350w,
+                                ./images/tablet/profil-250_x_250.jfif 250w"
+                        sizes="     (max-width: 768px) 350px,
+                                (max-width: 992px) 250px,
+                                500px"
+                        src="./images/desktop/profil-500_x_500.jfif" 
+                        alt="Photo de profil">
+            </div>
+            <div id="profil" class="design">
+                <p id="profil-firstname">Christopher</p>
+                <p id="profil-name">SEMARD</p>
+                <div id="line"></div>
+                <p>Développeur web et web mobile</p>
+                <p>En formation à <img src="./images/afpa-noir.png" alt="Logo de l'AFPA"></p>
+            </div>
+            <div id="about-me" class="design">
+                <h3>A propos de moi</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+            </div>
+        </section>
+        <section id="projects">
+            <h1>Mes projets</h1>
+            <article>
+                <div class="project-left design">
+                    <div id="photo-profil">
+                        <img    srcset="   ./images/desktop/profil-500_x_500.jfif 500w,
+                                        ./images/mobile/profil-350_x_350.jfif 350w,
+                                        ./images/tablet/profil-250_x_250.jfif 250w"
+                                sizes="     (max-width: 768px) 350px,
+                                        (max-width: 992px) 250px,
+                                        500px"
+                                src="./images/desktop/profil-500_x_500.jfif" 
+                                alt="Photo de profil">
+                    </div>
+                    <div class="project-content">
+                        <h2>Projet 1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta velit iure aperiam voluptatibus est ipsam quia voluptatum facere, recusandae odit beatae voluptates necessitatibus itaque amet accusamus illum? Minima, iure!</p>
+                        <button class="voir-plus">Voir plus</button>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="project-right design">
+                    <div id="photo-profil">
+                        <img    srcset="   ./images/desktop/profil-500_x_500.jfif 500w,
+                                        ./images/mobile/profil-350_x_350.jfif 350w,
+                                        ./images/tablet/profil-250_x_250.jfif 250w"
+                                sizes="     (max-width: 768px) 350px,
+                                        (max-width: 992px) 250px,
+                                        500px"
+                                src="./images/desktop/profil-500_x_500.jfif" 
+                                alt="Photo de profil">
+                    </div>
+                    <div class="project-content">
+                        <h2>Projet 2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta velit iure aperiam voluptatibus est ipsam quia voluptatum facere, recusandae odit beatae voluptates necessitatibus itaque amet accusamus illum? Minima, iure!</p>
+                        <button class="voir-plus">Voir plus</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <form class="design">
+                <label for="name">Prénom</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required="required"
+                    placeholder="Votre prénom..."
+                />
+                <label for="lastname">Nom</label>
+                <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    required="required"
+                    placeholder="Votre nom..."
+                />
+                <label for="msg">Message</label>
+                <textarea
+                    name="msg"
+                    id="msg"
+                    required="required"
+                    placeholder="Ecrivez votre message ici..."
+                    rows="10"
+                ></textarea>
+                
+                <button id="send" type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>2022 Christopher SEMARD</p>
+    </footer>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
