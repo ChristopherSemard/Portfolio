@@ -10,6 +10,9 @@
     --font-text :  Arial, Helvetica, sans-serif;
     --border-radius-desktop: 50px 0 50px 0;
     --border-radius-mobile: 25px 0 25px 0;
+    --border-radius-desktop-right: 0 50px 0 50px ;
+    --border-radius-mobile-right: 0 25px 0 25px ;
+    --modal-background : rgba(0,0,0,0.6);
 }
 
 *{
@@ -19,7 +22,7 @@
 }
 
 
-/* Design général global */
+/* --- Design général global --- */
 
 body{
     background-color: var(--background);
@@ -48,11 +51,15 @@ button{
     color: white;
     padding: 5px 10px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-/* Header, Nav, Footer */
+/* --- Header, Nav, Footer --- */
 header{
+    
     background-color: var(--background-accent);
+}
+.header-content{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -76,48 +83,43 @@ footer{
     background-color: var(--background-accent);
     padding: 20px;
 }
-em{
+header em{
     font-size: 1.7em;
     margin-left: 20px;
     color: var(--primary);
+    cursor: pointer;
 }
 
-/* About */
+/* --- About --- */
 
 #photo-profil img{
     width: 100%;
     object-fit: cover;
     border-radius: var(--border-radius-mobile);
 }
-
-#about div{
-    margin: 20px 0;
+#about-me, #profil{
+    margin-top: 20px;
 }
-
 h3{
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1.2em;
     font-weight: 600;
 }
-
-#profil #line{
+#line{
     height: 2px;
     background: var(--primary);
     margin: 10px 0;
 }
-
 #profil p{
     text-transform: uppercase;
     font-weight: 600;
 }
-
 #profil-firstname{
     color: var(--text);
     font-weight: 600;
     font-size: 20px;
     font-family: var(--font-title);
 }
-
 #profil-name{
     color: var(--primary);
     font-weight: 700;
@@ -125,28 +127,60 @@ h3{
     font-family: var(--font-title);
     letter-spacing: 5px;
 }
+#afpa{ 
+    height: 25px;
+    padding-top: 10px;
 
-
-/* Carte projet */
-article{
-    margin-bottom: 20px;
 }
+
+/* --- Projets --- */
 .project-content{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.project-content p {
+.project-description {
     display: none;
 }
+.project-technologies{
+    display: none;
+}
+.project-image-2, .project-image-3{
+    display: none;
+}
+
+
 h2{
     margin: 10px 0;
 }
 .voir-plus{
     margin-top: 5px;
 }
+.project-images img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-mobile);
+}
 
-/* Formulaire de contact */
+/* --- Slider horizontal projets --- */
+
+#projects-container {
+    scroll-snap-type: x mandatory;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+}
+#projects-container::-webkit-scrollbar {
+    display: none;
+}
+article {
+    scroll-snap-align: start;
+    position: relative;
+    min-width: calc(100vw - 10% - 40px);
+    padding: 20px;
+}
+
+/* --- Formulaire de contact --- */
 form{
     display: flex;
     flex-direction: column;
@@ -168,34 +202,278 @@ label{
 }
 
 
+@media screen and (min-width: 768px) {
+
+    /* --- Design général --- */
+    h1{
+        text-align: center;
+    }
+    button{
+        border-radius: 10px 0px;
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+    
+    /* --- Header, Nav, Footer --- */
+
+    header em{
+        font-size: 2.5em;
+        margin-left: 50px;
+    }
+
+    /* --- About --- */
+    #about{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #photo-profil{
+        width: 250px;
+    }
+    #profil{
+        text-align: right;
+    }
+    #profil-firstname{
+        font-size: 24px;
+    }
+    #profil-name{
+        font-size: 36px;
+        margin-right:-5px;
+        letter-spacing: 5px;
+    }
+    #about-me{
+        text-align: center;
+        padding: 30px;
+    }
+    #line{
+        margin: 20px 0;
+    }
+
+    /* --- Projets --- */
+
+
+    #projects-container{
+        flex-direction: column;
+        height: calc(350px + 350px + 70px) ;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        scroll-snap-type: y mandatory;
+    }
+    #projects{
+        padding-top: 20px;
+    }
+    article{
+        padding: 0px;
+        margin-bottom: 40px;
+    }
+    article div{
+        scroll-snap-align: none;
+        width: calc(100%-40px);
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    .project-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .project-right .project-images{
+        order:2;
+        border-radius: var(--border-radius-mobile-right);
+    }
+    .project-right{
+        border-radius: var(--border-radius-mobile-right);
+    }
+    .project-right .project-images img{
+        border-radius: var(--border-radius-mobile-right);
+    }
+    .project-right .voir-plus{
+        border-radius: 0 10px;
+    }
+
+    .project-description {
+        display: block;
+    }
+    
+    h2{
+        margin: 10px 0;
+        font-size: 1.8em;
+    }
+    .voir-plus{
+        margin-top: 5px;
+        align-self: flex-end;
+        margin-top: auto;
+    }
+    .project-images{
+        padding: 20px;
+        width: 250px;
+    }
+    .project-images img{
+        width: 250px;
+        object-fit: cover;
+        border-radius: var(--border-radius-mobile);
+    }
+    /* --- Formulaire de contact --- */
+    .form{
+        padding: 40px;
+    }
+
+    input, textarea{
+        padding: 10px;
+        font-size: 1em;
+    }
+    label{
+        font-size: 1.4em;
+        margin-top: 10px;
+    }
+    #send{
+        margin-top: 20px;
+    }
+
+}
 
 @media screen and (min-width: 992px) {
 
-    main{
-        max-width: 1000px;
+    /* --- Design général --- */
+    h1{
+        font-size: 3em;
+        text-align: left;
+        margin-top: 40px;
+    } 
+    main, .header-content{
+        max-width: 1200px;
         margin: auto;
     }
+    .design{
+        border-radius: var(--border-radius-desktop);
+    }
 
-    /* Carte projet */
 
-    article{
-        height: 100vh;
+    /* --- Header --- */
+    header, footer{
+        height: 100px;
+    }
+    .header-content{
+        padding: 0;
+        height: 100px;
         display: flex;
+        align-items: center;
+    }
+    .nav-mobile, .nav-mobile-menu{
+        display:none;
+    }
+    .nav-desktop{
+        display: block;
+        display: flex;
+        width: 100%;
+    }
+    .nav-desktop a{
+        width: 150px;
+        text-align: center;
+    }
+    .nav-desktop a:visited, .nav-desktop a{
+        color: var(--text);
+        text-decoration: none;
+        font-family: var(--font-title);
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+    header em{
+        font-size: 2em;
+        margin-left: 0;
     }
 
-    .project-left, .project-right{
+
+    /* --- About --- */
+    #about{
+        padding: 50px 0;
+    }
+    #photo-profil{
+        width: 400px;
+    }
+    #profil{
+        margin-top: 0;
+        width: calc(100% - 550px);
+    }
+    #about-me{
+        margin-top: 100px;
+    }
+
+    
+    /* --- Projets --- */
+    #projects-container{
+        height: calc(100vh - 142px) ;
+        overflow-x: none;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        scroll-snap-type: y mandatory;
+    }
+    #projects{
+        padding-top: 20px;
+    }
+    article{
+        padding: 150px 0;
+        min-width: 100%;
+        display: flex;
+        scroll-snap-align: start;
+    }
+    article div{
+        
+        display: flex;
+        flex-direction: row;
+    }
+    .project-right, .project-left{
         margin: auto;
+        height: 400px;
+        width : 100%;
+    }
+    .project-images{
+        width: 400px;
+    }
+    .project-images img{
+        width: 400px;
+        object-fit: cover;
+        border-radius: var(--border-radius-desktop);
+    }
+
+    .project-right .project-images{
+        order:2;
+        border-radius: var(--border-radius-desktop-right);
+    }
+    .project-right{
+        border-radius: var(--border-radius-desktop-right);
+    }
+    .project-right .project-images img{
+        border-radius: var(--border-radius-desktop-right);
+    }
+    .project-right .voir-plus{
+        border-radius: 0 10px;
+    }
+    .project-technologies{
+        display: block;
+    }
+
+    /* --- Formulaire de contact --- */
+    #contact{
+        height: calc(100vh - 200px);
+        display: flex;
         flex-direction: column;
     }
-
-    /* Formulaire de contact */
+    .contact-title{
+        top: 0;
+        background-color: var(--background);
+        padding: 10px 0;
+    }
     form{
+        width: 100%;
+        margin: auto;
         background-color: rgb(238, 238, 238);
-        margin:10px;
         display: grid;
-        grid-gap: 5px;
+        grid-gap: 10px;
         align-items: center;
-        grid-template-columns: 200px 1fr 80px;
+        grid-template-columns: 200px 1fr 150px;
         grid-template-rows: 30px 30px 1fr 40px;
         grid-template-areas:    "label input input"
                                 "label2 input2 input2"
@@ -233,7 +511,95 @@ label{
     }
     label{
         color: var(--primary);
+        font-size: 1.2em;
     }
+
+    /* Modal */
+    #modal{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: var(--modal-background); /* Black w/ opacity */
+
+    }
+    #modal-content {
+        height: 500px;
+        display: flex;
+        margin: 15% auto; /* 15% from the top and centered */
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    #modal #close-modal{
+        background-color: rgb(196, 18, 5);
+    }
+    #modal-content .project-images{
+        min-width: 360px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+
+    }
+    #modal-content .project-images::-webkit-scrollbar {
+        display: none;
+    }
+    #modal-content .project-images img{
+        display: block;
+        height: 360px;
+        width: 360px;
+        display: flex;
+        margin: 0;
+        scroll-snap-align: start;
+        transition: 0.5s;
+        filter : drop-shadow(0px 0px 10px rgba(0,0,0,0.5))
+    }
+
+    
+    #modal-content .project-images img:hover {
+        z-index: 10;
+        transform: scale(100%)
+    }
+    
+
+    #modal-content .project-images img:not(:first-child) {
+        margin-top: -310px;
+    }
+    
+    #modal-content .project-images .project-image-1 {
+        z-index: 5;
+    }
+    #modal-content .project-images .project-image-2 {
+        z-index: 4;
+        transform: scale(90%)
+    }
+    #modal-content .project-images .project-image-3 {
+        z-index: 3;
+        transform: scale(80%);
+    }
+
 
 }
 
+/* --- Icones langages --- */
+.fa-html5{
+    color: #EF450A;
+}
+.fa-css3-alt{
+    color: #2449D8;
+}
+.fa-js{
+    color: #EAD41C;
+}
+.fa-wordpress{
+    color: #3190CD;
+}
+.fa-php{
+    color: #7175AA;
+}
+.fa-react{
+    color: #5CCFEE;
+}
