@@ -44,8 +44,6 @@ const openModal = (event) => {
     modal.appendChild(modalContent)
     modal.style.display = 'block';  
 
-    images = modal.querySelectorAll("img")
-    console.log(images);
 }
 
 const closeModal = () => {
@@ -62,6 +60,18 @@ window.onclick = function (event) {
 
 // Slider hover modal
 
-images.mouseover = function (event) {
-    console.log("salut");
-};
+document.addEventListener("mouseover", event => {
+    if(event.target.parentNode.parentNode.id == "modal-content"){
+        modal = document.querySelector('#modal')
+        let images = modal.querySelectorAll('img')
+        console.log(images);
+        let baseZIndex = 2
+        for(let image of images){
+            console.log(image);
+            image.style.transform = "scale(0.8)";
+            image.style.zIndex = "2"
+        }
+        event.target.style.transform = "scale(1)";
+        event.target.style.zIndex = "999"
+    }
+});
