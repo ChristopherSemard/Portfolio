@@ -847,7 +847,7 @@ label{
 
     /* Grid du formulaire */
     form{
-        width: 100%;
+        width: calc(100% - 80px);
         margin: auto;
         background-color: rgb(238, 238, 238);
         display: grid;
@@ -908,13 +908,12 @@ label{
 
     /* Modal images */
     #modal-content .project-images{
+        
+        border: 10px inline white;
         min-width: 360px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-    }
-    #modal-content .project-images img{
-        border-bottom: 2px solid var(--background-accent);
     }
 
     /* Modal footer */
