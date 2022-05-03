@@ -63,7 +63,7 @@ document.addEventListener("click", event => {
         modal = document.querySelector('#modal')
         let images = modal.querySelectorAll('img')
         for(let image of images){
-            image.style.height = "15%";
+            image.style.height = "14%";
             image.style.opacity = "0.8"
         }
         event.target.style.height = "70%"

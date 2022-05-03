@@ -335,6 +335,13 @@ label{
 }
 #modal-content .project-images .project-image-1 {
     height:70%;
+    border-radius: 10px 0 0 0;
+}
+#modal-content .project-images .project-image-2 {
+    border-radius: 0 0 0 0;
+}
+#modal-content .project-images .project-image-3 {
+    border-radius: 0 0 10px 0;
 }
 #modal-content .project-images .project-image-2, #modal-content .project-images .project-image-3{
     display: inline;
@@ -342,7 +349,7 @@ label{
 }
 #modal-content .project-images img {
     width : 100%;
-    height: 15%;
+    height: 14%;
     cursor: pointer;
     margin-bottom: 2px;
     transition: all 0.5s;
@@ -513,7 +520,7 @@ label{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 20px 20px 20px;
+        padding: 20px;
     }
     .project-description {
         display: block;
@@ -716,7 +723,7 @@ label{
     #home-icon i{
         color: var(--background-accent);
     }
-    
+
     /* --- About --- */
     #about{
         padding: 100px 0;
@@ -885,7 +892,7 @@ label{
 
     /* Modal */
     #modal-content {
-        height: 500px;
+        height: 550px;
         display: flex;
         flex-direction: row;
         margin: 15% auto;
