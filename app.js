@@ -23,8 +23,7 @@ button.addEventListener("click", e => {
     }
 });
 
-
-// Modal
+// Ouverture modal
 let images
 let modal = document.querySelector('#modal')
 let buttonsOpenModal = document.querySelectorAll('.voir-plus')
@@ -51,7 +50,6 @@ const closeModal = () => {
     modal.style.display = "none";
 }
 
-
 // Fermeture modal quand on clique en dehors
 window.onclick = function (event) {
     if (event.target == modal) {
@@ -59,16 +57,14 @@ window.onclick = function (event) {
     }
 };
 
-
 // Accordéon images modal
 document.addEventListener("click", event => {
-    if(event.target.parentNode.parentNode.id == "modal-content" && event.target.nodeName == "IMG"){
+    if(event.target.nodeName == "IMG" && event.target.parentNode.parentNode.id == "modal-content"){
         modal = document.querySelector('#modal')
         let images = modal.querySelectorAll('img')
         for(let image of images){
-            console.log(image);
             image.style.height = "15%";
-            image.style.opacity = "0.5"
+            image.style.opacity = "0.8"
         }
         event.target.style.height = "70%"
         event.target.style.opacity = "1"
@@ -77,7 +73,6 @@ document.addEventListener("click", event => {
 
 // Animation lorsque les projets sont visibles à l'écran
 const observerL = new IntersectionObserver(entries => {
-    console.log(entries);
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('left-animation');
@@ -91,7 +86,6 @@ for(project of projectsLeft){
 }
 
 const observerR = new IntersectionObserver(entries => {
-    console.log(entries);
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('right-animation');

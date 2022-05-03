@@ -1,11 +1,14 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 
+/* Variables */
 :root{
-    --primary : #75B31D;
+    --primary : #87BB34;
+    --primary-accent : #6c9c1d;
     --background : #FFFFFF;
     --background-accent : #f4f4f4;
     --text : #141414;
-    --text-accent : #75B31D;
+    --text-accent : #87BB34;
     --font-title : 'Raleway', sans-serif;;
     --font-text :  Arial, Helvetica, sans-serif;
     --border-radius-desktop: 50px 0 50px 0;
@@ -23,29 +26,26 @@
 }
 
 
-/* --- Design général global --- */
-
+/* --- Design général --- */
 body{
     background-color: var(--background);
     transition: var(--transition-dark-mode);
 }
-
 h1, h2, h3{
     text-transform: uppercase;
     font-family: var(--font-title);
     color: var(--primary);
 }
-
 main{
     padding: 0 5%;
 }
-
 h1{
     margin: 40px 0 25px 0;
     font-size: 32px;
     font-weight: 700;
 }
 
+/* Design global des boutons */
 button{
     background: #87BB34;
     border-radius: 10px 0px;
@@ -54,15 +54,36 @@ button{
     padding: 5px 10px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.2s;
-}
+    transition: all 0.1s;
+    font-weight: 600;
 
+    border-bottom: 2px solid #6c9c1d;
+    background: linear-gradient(to bottom, #6c9c1d, #6c9c1d 50%, #87BB34 50%);
+    background-size: 100% 200%;
+    background-position: 0 100% ;
+    transition: background-position 0.3s ease;
+}
 button:hover{
     transform: scale(0.98);
+    background-position: 100% 0;
+    border-bottom: 2px solid var(--primary);
 }
 button:active{
-    transform: scale(0.8);
+    transform: scale(0.95);
 }
+#close-modal{
+    
+    border-bottom: 2px solid rgb(180, 0, 0);
+    background: linear-gradient(to bottom, rgb(207, 0, 0), rgb(207, 0, 0) 50%, rgb(228, 0, 0) 50%);
+    background-size: 100% 200%;
+    background-position: 0 100% ;
+    transition: background-position 0.3s ease;
+}
+#close-modal:hover{
+    background-position: 100% 0;
+    border-bottom: 2px solid rgb(228, 0, 0);
+}
+
 
 /* --- Header, Nav, Footer --- */
 header{
@@ -96,7 +117,7 @@ footer{
     transition: var(--transition-dark-mode);
     padding: 20px;
 }
-header em{
+header i{
     font-size: 1.7em;
     margin-left: 20px;
     color: var(--primary);
@@ -104,15 +125,76 @@ header em{
     transition: 0.2s;
 }
 
-header em:hover{
+header i:hover{
     transform: scale(0.98);
 }
-header em:active{
+header i:active{
     transform: scale(0.8);
 }
 
-/* --- About --- */
+/* --- Home --- */
+#home{
+    position: relative;
+    margin: 50px 0;
+    padding: 20px 20px;
+    background-color: var(--background);
+    background: linear-gradient(to bottom, var(--background) 0%, var(--background)  50%, var(--background-accent)  100%);
+    height: calc(100vh - 200px);
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 5px solid var(--primary);
+}
+#home p{
+    font-size: 1.1em;
+    margin: 5px 0;
+    line-height: 1.5em;
+}
+#home #home-name{
+    font-size: 2.5em;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 400;
+    color: var(--primary);
+}
+#home #home-lastname{
+    letter-spacing: 10px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--primary);
+}
+#home #home-socials{
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+}
 
+#home #home-socials-icons{
+    font-size: 2em;
+    margin: 0 0 10px 0;
+}
+
+#apprendre-plus{
+    text-decoration: none;
+}
+#apprendre-plus p{
+    text-decoration: none;
+    color: var(--text-accent);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+#home-icon{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+}
+#home-icon i{
+    color: var(--background);
+}
+
+/* --- About --- */
 #photo-profil img{
     width: 100%;
     object-fit: cover;
@@ -160,24 +242,15 @@ h3{
     align-items: center;
     flex-direction: column;
 }
-.project-description {
+.project-technologies, .project-description, .project-image-2, .project-image-3, .voir-github{
     display: none;
 }
-.project-technologies{
-    display: none;
-}
-
-.project-technologies em{
-    font-size : 1.4em;
-    margin: 0 5px 0 5px;
-}
-.project-image-2, .project-image-3{
-    display: none;
-}
-
-
 h2{
     margin: 10px 0;
+}
+.project-technologies i{
+    font-size : 1.4em;
+    margin: 0 5px 0 5px;
 }
 .voir-plus{
     margin-top: 5px;
@@ -189,7 +262,6 @@ h2{
 }
 
 /* --- Slider horizontal projets --- */
-
 #projects-container {
     scroll-snap-type: x mandatory;
     display: flex;
@@ -222,7 +294,7 @@ textarea{
     resize: vertical;
 }
 label{
-    color: var(--primary);
+    color: var(--text);
 }
 #send{
     align-self: flex-end;
@@ -250,26 +322,54 @@ label{
     margin: 8% auto;
     width: 80%;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    border-radius: 20px 0 20px 0;
 }
-
 #modal .project-technologies, #modal .project-content, #modal .project-content p{
     display: block;
     text-align: center;
 }
 
-#modal .project-technologies{
-    margin-top: 10px;
+/* Modal Images */
+#modal-content .project-images{
+    order:0;
+}
+#modal-content .project-images .project-image-1 {
+    height:70%;
+}
+#modal-content .project-images .project-image-2, #modal-content .project-images .project-image-3{
+    display: inline;
+    opacity : 0.8;
+}
+#modal-content .project-images img {
+    width : 100%;
+    height: 15%;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 0.5s;
+    border-radius: 10px 0 10px 0;
 }
 
+/* Modal footer */
 #modal .project-footer{
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+#modal .project-technologies{
+    margin-top: 10px;
+}
+#modal .voir-github{
+    display: block;
+    
+}
+#modal a{
+    text-decoration: none;
+    margin-top: 20px;
+}
 #modal #close-modal{
     margin-top: 10px;
-    background-color: rgb(196, 18, 5);
     align-self: flex-end;
+    border-radius: 10px 0 10px 0;
 }
 #modal-content .project-images{
     min-width: 100%;
@@ -279,39 +379,52 @@ label{
     overflow: hidden;
 }
 
-#modal-content .project-images .project-image-1 {
-    height:70%;
-}
-#modal-content .project-images .project-image-2, #modal-content .project-images .project-image-3{
-    display: inline;
-    opacity : 0.5;
-}
-
-#modal-content .project-images img {
-    width : 100%;
-    height: 15%;
-    cursor: pointer;
-    margin-bottom: 2px;
-    transition: all 0.5s;
-}
-
 @media screen and (min-width: 768px) {
 
     /* --- Design général --- */
     h1{
         text-align: center;
     }
+
+    /* Design boutons */
     button{
         border-radius: 10px 0px;
         padding: 8px 15px;
         font-size: 1em;
     }
-    
-    /* --- Header, Nav, Footer --- */
 
-    header em{
+    /* --- Header, Nav, Footer --- */
+    header i{
         font-size: 2.5em;
         margin-left: 50px;
+    }
+
+    /* --- Home --- */
+    #home{
+        margin: 100px 0;
+        padding: 20px 50px;
+        height: calc(100vh - 340px);
+    }
+    #home p{
+        line-height: 1.2em;
+        font-size: 2em;
+        margin: 10px 0;
+    }
+    #home #home-name{
+        font-size: 4em;
+    }
+    #home #home-socials{
+        font-size: 1.5em;
+        margin: 10px 0 5px 0;
+    }
+    #home #home-socials-icons{
+        font-size: 2em;
+    }
+    #home #home-socials-icons i{
+        margin-right: 10px;
+    }
+    #apprendre-plus p{
+        font-size: 1.5em;
     }
 
     /* --- About --- */
@@ -343,12 +456,33 @@ label{
     }
 
     /* --- Projets --- */
+    #projects-container{
+        flex-direction: column;
+    }
+    
+    #projects{
+        padding-top: 20px;
+    }
+    article{
+        padding: 0px;
+        margin-bottom: 40px;
+    }
+    article div{
+        scroll-snap-align: none;
+        width: calc(100%-40px);
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Animation apparition des projets */
     .left-animation{
-        animation : slide_left 1s ease-in-out;
+        animation : slide_left 0.5s ease-in-out;
     }
     .right-animation{
-        animation : slide_right 1s ease-in-out;
+        animation : slide_right 0.5s ease-in-out;
     }
+
+    /* Paramètres particuliers des projets */
     .project-right .project-images{
         order:2;
         border-radius: var(--border-radius-mobile-right);
@@ -363,22 +497,7 @@ label{
         border-radius: 0 10px;
     }
 
-    #projects-container{
-        flex-direction: column;
-    }
-    #projects{
-        padding-top: 20px;
-    }
-    article{
-        padding: 0px;
-        margin-bottom: 40px;
-    }
-    article div{
-        scroll-snap-align: none;
-        width: calc(100%-40px);
-        display: flex;
-        flex-direction: row;
-    }
+    /* Images des projets */
     .project-images{
         padding: 20px;
         width: 250px;
@@ -388,35 +507,38 @@ label{
         object-fit: cover;
         border-radius: var(--border-radius-mobile);
     }
+
+    /* Contenu des projets */
     .project-content{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;
+        padding: 0 20px 20px 20px;
     }
     .project-description {
         display: block;
     }
-    
     h2{
         margin: 10px 0;
         font-size: 1.8em;
     }
+
+    /* Projet footer */
     .project-footer{
         margin-top: 5px;
         width: 100%;
         justify-content: flex-end;
         margin-top: auto;
     }
-    .project-technologies em{
+    .project-technologies i{
         font-size : 2em;
         margin: 0 5px 0 5px;
     }
+
     /* --- Formulaire de contact --- */
     .form{
         padding: 40px;
     }
-
     input, textarea{
         padding: 10px;
         font-size: 1em;
@@ -432,22 +554,19 @@ label{
 
     /* Modal */
     #modal-content {
-        height: 80vh;
+        height: 90vh;
         display: flex;
         flex-direction: column;
-        margin: 10% auto;
+        margin: 5% auto;
         width: 70%;
         padding: 10px;
     }
-
     #modal .project-content p{
         line-height: 1.5em;
     }
-
     #modal .project-technologies{
         margin-top: 20px;
     }
-
     #modal-content .project-images{
         min-width: 80%;
         width: calc(100% - 40px);
@@ -477,7 +596,7 @@ label{
     }
 
 
-    /* --- Header --- */
+    /* --- Header, Footer --- */
     header, footer{
         height: 100px;
     }
@@ -487,6 +606,33 @@ label{
         display: flex;
         align-items: center;
     }
+
+    
+    /* Icones dark mode et menu */
+    header i{
+        font-size: 2em;
+        margin-left: 0;
+    }
+    header i{
+        text-align: center;
+        margin-right: 50px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        background: linear-gradient(to right, var(--text-accent), var(--text-accent) 50%, var(--text) 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 0.3s ease;
+    }
+
+    header i:hover{
+        background-position: 0 100%;
+    }
+
+    /* Nav desktop */
     .nav-mobile, .nav-mobile-menu{
         display:none;
     }
@@ -495,46 +641,6 @@ label{
         display: flex;
         width: 100%;
     }
-    .nav-desktop a{
-        text-align: center;
-        margin-right: 50px;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-
-        background: linear-gradient(to right, var(--text-accent), var(--text-accent) 50%, var(--text) 50%);
-        
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% 100%;
-        background-position: 100%;
-
-        transition: background-position 0.3s ease;
-
-    }
-    .nav-desktop a:hover{
-        background-position: 0 100%;
-        text-decoration: overline;
-    }
-    .nav-desktop a:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--text-accent);
-        transform-origin:  left;
-        transition: transform 0.3s ease-out;
-    }
-
-    .nav-desktop a:hover:after {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
-
     .nav-desktop a:visited, .nav-desktop a{
         color: var(--text);
         text-decoration: none;
@@ -542,16 +648,82 @@ label{
         font-weight: 600;
         font-size: 1.2em;
     }
+    .nav-desktop a{
+        text-align: center;
+        margin-right: 50px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        background: linear-gradient(to right, var(--text-accent), var(--text-accent) 50%, var(--text) 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
 
-    header em{
-        font-size: 2em;
-        margin-left: 0;
+        transition: background-position 0.3s ease;
+    }
+    .nav-desktop a:hover{
+        background-position: 0 100%;
     }
 
-
+    /* --- Home --- */
+    #home{
+        margin: 100px 0;
+        padding: 20px 100px;
+        background-color: var(--background);
+        background: linear-gradient(to bottom, var(--background) 0%, var(--background)  50%, var(--background-accent)  100%);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border-bottom: 5px solid var(--primary);
+    }
+    #home p{
+        font-size: 1.8em;
+        margin: 5px 0;
+        line-height: 1.2em;
+    }
+    #home #home-name{
+        font-size: 4em;
+        text-transform: uppercase;
+        font-family: var(--font-title);
+        font-weight: 400;
+        color: var(--primary);
+    }
+    #home #home-lastname{
+        letter-spacing: 10px;
+        font-family: var(--font-title);
+        font-weight: 700;
+        color: var(--primary);
+    }
+    #home #home-socials{
+        font-size: 1.2em;
+        margin: 10px 0 0 0;
+    }
+    #home #home-socials-icons{
+        font-size: 2.5em;
+    }
+    #apprendre-plus p{
+        font-size: 1.2em;
+    }
+    #home-icon{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        font-size: 3em;
+    }
+    #home-icon i{
+        color: var(--background-accent);
+    }
+    
     /* --- About --- */
     #about{
-        padding: 50px 0;
+        padding: 100px 0;
+        height: calc(100vh - 250px);
+    }
+    #photo-profil, #profil{
+        height: 400px;
     }
     #photo-profil{
         width: 400px;
@@ -561,8 +733,11 @@ label{
         width: calc(100% - 550px);
     }
     #about-me{
-        margin-top: 70px;
+        margin-top: 50px;
         line-height: 2em;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
     }
     #profil-firstname{
         font-size: 32px;
@@ -577,8 +752,8 @@ label{
     #projects{
         padding-top: 20px;
     }
-    
     #projects-title{  
+        margin-bottom: 40px;
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0;
@@ -602,15 +777,8 @@ label{
         height: 400px;
         width : 100%;
     }
-    .project-images{
-        min-width: 360px;
-    }
-    .project-images img{
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--border-radius-desktop);
-    }
 
+    /* Design particulier des projets */
     .project-right .project-images{
         order:2;
         border-radius: var(--border-radius-desktop-right);
@@ -624,8 +792,21 @@ label{
     .project-right .voir-plus{
         border-radius: 0 10px;
     }
+
+    /* Projet images */
+    .project-images{
+        min-width: 360px;
+    }
+    .project-images img{
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-desktop);
+    }
+
+    /* Projet footer */
     .project-footer{
         justify-content: space-between;
+        align-items: flex-end;
     }
     .project-technologies{
         display: flex;
@@ -636,11 +817,11 @@ label{
         margin-bottom: 0px;
         margin-right: 20px;
     }
-    .project-technologies em{
+    .project-technologies i{
         font-size : 2em;
         margin-right: 10px;
     }
-
+    
     /* --- Formulaire de contact --- */
     #contact{
         height: calc(100vh - 200px);
@@ -653,6 +834,11 @@ label{
         transition: var(--transition-dark-mode);
         padding: 10px 0;
     }
+    label{
+        font-size: 1.2em;
+    }
+
+    /* Grid du formulaire */
     form{
         width: 100%;
         margin: auto;
@@ -696,10 +882,6 @@ label{
         grid-area: button;
         cursor: pointer;
     }
-    label{
-        color: var(--primary);
-        font-size: 1.2em;
-    }
 
     /* Modal */
     #modal-content {
@@ -713,23 +895,38 @@ label{
         display: flex;
         text-align: left;
     }
-    #modal .project-technologies{
-        display: flex;
+    #modal .project-content{
+        padding: 20px;
     }
-    #modal #close-modal{
-        margin-top: 20px;
-        background-color: rgb(196, 18, 5);
-        align-self: flex-end;
-    }
+
+    /* Modal images */
     #modal-content .project-images{
         min-width: 360px;
-        width: 00px;
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
+    #modal-content .project-images img{
+        border-bottom: 2px solid var(--background-accent);
+    }
 
-    
+    /* Modal footer */
+    #modal .project-footer{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #modal .project-technologies{
+        display: flex;
+        width: 100%;
+    }
+    #modal .voir-github{
+        margin-right: 20px;
+    }
+    #modal #close-modal{
+        margin-top: 20px;
+    }
+
 }
 
 /* --- Icones langages --- */
@@ -752,8 +949,17 @@ label{
     color: #5CCFEE;
 }
 
-
-
+/* --- Icones socials --- */
+/* .fa-github{
+    color: #141414;
+}
+.fa-linkedin{
+    color: #026EAA;
+} */
+.fa-github, .fa-linkedin{
+    color: var(--text-accent);
+}
+/* Animations */
 @keyframes slide_up {
     0% {
         transform: translateY(1000px);
