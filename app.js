@@ -30,14 +30,14 @@ let modal = document.querySelector('#modal')
 let buttonsOpenModal = document.querySelectorAll('.voir-plus')
 
 const openModal = (event) => {
-    let project = event.target.parentNode.parentNode;
+    let project = event.target.parentNode.parentNode.parentNode;
     
     while (modal.lastElementChild) {
         modal.removeChild(modal.lastElementChild);
     }
     let modalContent = project.cloneNode(true);
     modalContent.id = "modal-content";
-    let closeButton = modalContent.lastElementChild.lastElementChild;
+    let closeButton = modalContent.lastElementChild.lastElementChild.lastElementChild;
     closeButton.id = "close-modal";
     closeButton.setAttribute("onClick", "closeModal()");
     closeButton.textContent = "Fermer";
@@ -46,11 +46,13 @@ const openModal = (event) => {
 
 }
 
+// Fermeture de la modal
 const closeModal = () => {
     modal.style.display = "none";
 }
 
 
+// Fermeture modal quand on clique en dehors
 window.onclick = function (event) {
     if (event.target == modal) {
         closeModal();
@@ -58,20 +60,46 @@ window.onclick = function (event) {
 };
 
 
-// Slider hover modal
-
-document.addEventListener("mouseover", event => {
-    if(event.target.parentNode.parentNode.id == "modal-content"){
+// Accordéon images modal
+document.addEventListener("click", event => {
+    if(event.target.parentNode.parentNode.id == "modal-content" && event.target.nodeName == "IMG"){
         modal = document.querySelector('#modal')
         let images = modal.querySelectorAll('img')
-        console.log(images);
-        let baseZIndex = 2
         for(let image of images){
             console.log(image);
-            image.style.transform = "scale(0.8)";
-            image.style.zIndex = "2"
+            image.style.height = "15%";
+            image.style.opacity = "0.5"
         }
-        event.target.style.transform = "scale(1)";
-        event.target.style.zIndex = "999"
+        event.target.style.height = "70%"
+        event.target.style.opacity = "1"
     }
 });
+
+// Animation lorsque les projets sont visibles à l'écran
+const observerL = new IntersectionObserver(entries => {
+    console.log(entries);
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('left-animation');
+    }
+});
+});
+
+let projectsLeft = document.querySelectorAll('.project-left')
+for(project of projectsLeft){
+    observerL.observe(project);
+}
+
+const observerR = new IntersectionObserver(entries => {
+    console.log(entries);
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('right-animation');
+    }
+});
+});
+
+let projectsRight = document.querySelectorAll('.project-right')
+for(project of projectsRight){
+    observerR.observe(project);
+}

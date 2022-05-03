@@ -13,6 +13,7 @@
     --border-radius-desktop-right: 0 50px 0 50px ;
     --border-radius-mobile-right: 0 25px 0 25px ;
     --modal-background : rgba(0,0,0,0.6);
+    --transition-dark-mode : 0.2s;
 }
 
 *{
@@ -26,6 +27,7 @@
 
 body{
     background-color: var(--background);
+    transition: var(--transition-dark-mode);
 }
 
 h1, h2, h3{
@@ -52,12 +54,21 @@ button{
     padding: 5px 10px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover{
+    transform: scale(0.98);
+}
+button:active{
+    transform: scale(0.8);
 }
 
 /* --- Header, Nav, Footer --- */
 header{
     
     background-color: var(--background-accent);
+    transition: var(--transition-dark-mode);
 }
 .header-content{
     display: flex;
@@ -73,6 +84,7 @@ header{
 
 footer{
     background-color: var(--background-accent);
+    transition: var(--transition-dark-mode);
     padding: 20px;
     margin-top: 40px;
     text-align: center;
@@ -81,6 +93,7 @@ footer{
 .design{
     border-radius: var(--border-radius-mobile);
     background-color: var(--background-accent);
+    transition: var(--transition-dark-mode);
     padding: 20px;
 }
 header em{
@@ -88,6 +101,14 @@ header em{
     margin-left: 20px;
     color: var(--primary);
     cursor: pointer;
+    transition: 0.2s;
+}
+
+header em:hover{
+    transform: scale(0.98);
+}
+header em:active{
+    transform: scale(0.8);
 }
 
 /* --- About --- */
@@ -145,6 +166,11 @@ h3{
 .project-technologies{
     display: none;
 }
+
+.project-technologies em{
+    font-size : 1.4em;
+    margin: 0 5px 0 5px;
+}
 .project-image-2, .project-image-3{
     display: none;
 }
@@ -187,6 +213,7 @@ form{
 }
 input, textarea{
     background-color: var(--background);
+    transition: var(--transition-dark-mode);
     padding: 5px;
     border: rgba(0,0,0,0.4) 1px ;
     margin: 10px 0;
@@ -201,6 +228,72 @@ label{
     align-self: flex-end;
 }
 
+
+/* Modal */
+#modal{
+    animation : slide_down 0.1s ease-in-out;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: var(--modal-background);
+}
+#modal-content {
+    animation : slide_up 0.5s ease-in-out;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    margin: 8% auto;
+    width: 80%;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+#modal .project-technologies, #modal .project-content, #modal .project-content p{
+    display: block;
+    text-align: center;
+}
+
+#modal .project-technologies{
+    margin-top: 10px;
+}
+
+#modal .project-footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#modal #close-modal{
+    margin-top: 10px;
+    background-color: rgb(196, 18, 5);
+    align-self: flex-end;
+}
+#modal-content .project-images{
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#modal-content .project-images .project-image-1 {
+    height:70%;
+}
+#modal-content .project-images .project-image-2, #modal-content .project-images .project-image-3{
+    display: inline;
+    opacity : 0.5;
+}
+
+#modal-content .project-images img {
+    width : 100%;
+    height: 15%;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 0.5s;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -250,34 +343,11 @@ label{
     }
 
     /* --- Projets --- */
-
-
-    #projects-container{
-        flex-direction: column;
-        height: calc(350px + 350px + 70px) ;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        scroll-snap-type: y mandatory;
+    .left-animation{
+        animation : slide_left 1s ease-in-out;
     }
-    #projects{
-        padding-top: 20px;
-    }
-    article{
-        padding: 0px;
-        margin-bottom: 40px;
-    }
-    article div{
-        scroll-snap-align: none;
-        width: calc(100%-40px);
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-    }
-    .project-content{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+    .right-animation{
+        animation : slide_right 1s ease-in-out;
     }
     .project-right .project-images{
         order:2;
@@ -293,18 +363,21 @@ label{
         border-radius: 0 10px;
     }
 
-    .project-description {
-        display: block;
+    #projects-container{
+        flex-direction: column;
     }
-    
-    h2{
-        margin: 10px 0;
-        font-size: 1.8em;
+    #projects{
+        padding-top: 20px;
     }
-    .voir-plus{
-        margin-top: 5px;
-        align-self: flex-end;
-        margin-top: auto;
+    article{
+        padding: 0px;
+        margin-bottom: 40px;
+    }
+    article div{
+        scroll-snap-align: none;
+        width: calc(100%-40px);
+        display: flex;
+        flex-direction: row;
     }
     .project-images{
         padding: 20px;
@@ -314,6 +387,30 @@ label{
         width: 250px;
         object-fit: cover;
         border-radius: var(--border-radius-mobile);
+    }
+    .project-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .project-description {
+        display: block;
+    }
+    
+    h2{
+        margin: 10px 0;
+        font-size: 1.8em;
+    }
+    .project-footer{
+        margin-top: 5px;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: auto;
+    }
+    .project-technologies em{
+        font-size : 2em;
+        margin: 0 5px 0 5px;
     }
     /* --- Formulaire de contact --- */
     .form{
@@ -331,6 +428,35 @@ label{
     #send{
         margin-top: 20px;
     }
+
+
+    /* Modal */
+    #modal-content {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        margin: 10% auto;
+        width: 70%;
+        padding: 10px;
+    }
+
+    #modal .project-content p{
+        line-height: 1.5em;
+    }
+
+    #modal .project-technologies{
+        margin-top: 20px;
+    }
+
+    #modal-content .project-images{
+        min-width: 80%;
+        width: calc(100% - 40px);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+
 
 }
 
@@ -370,9 +496,45 @@ label{
         width: 100%;
     }
     .nav-desktop a{
-        width: 150px;
         text-align: center;
+        margin-right: 50px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        background: linear-gradient(to right, var(--text-accent), var(--text-accent) 50%, var(--text) 50%);
+        
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+
+        transition: background-position 0.3s ease;
+
     }
+    .nav-desktop a:hover{
+        background-position: 0 100%;
+        text-decoration: overline;
+    }
+    .nav-desktop a:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--text-accent);
+        transform-origin:  left;
+        transition: transform 0.3s ease-out;
+    }
+
+    .nav-desktop a:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
     .nav-desktop a:visited, .nav-desktop a{
         color: var(--text);
         text-decoration: none;
@@ -380,6 +542,7 @@ label{
         font-weight: 600;
         font-size: 1.2em;
     }
+
     header em{
         font-size: 2em;
         margin-left: 0;
@@ -398,23 +561,33 @@ label{
         width: calc(100% - 550px);
     }
     #about-me{
-        margin-top: 100px;
+        margin-top: 70px;
+        line-height: 2em;
     }
-
+    #profil-firstname{
+        font-size: 32px;
+    }
+    #profil-name{
+        font-size: 48px;
+        margin-right:-5px;
+        letter-spacing: 5px;
+    }
     
     /* --- Projets --- */
-    #projects-container{
-        height: calc(100vh - 142px) ;
-        overflow-x: none;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        scroll-snap-type: y mandatory;
-    }
     #projects{
         padding-top: 20px;
     }
+    
+    #projects-title{  
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: var(--background);
+        padding: 20px;
+    }
     article{
-        padding: 150px 0;
+        padding: 20px 0;
         min-width: 100%;
         display: flex;
         scroll-snap-align: start;
@@ -451,8 +624,21 @@ label{
     .project-right .voir-plus{
         border-radius: 0 10px;
     }
+    .project-footer{
+        justify-content: space-between;
+    }
     .project-technologies{
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .project-technologies h3{
+        margin-bottom: 0px;
+        margin-right: 20px;
+    }
+    .project-technologies em{
+        font-size : 2em;
+        margin-right: 10px;
     }
 
     /* --- Formulaire de contact --- */
@@ -464,6 +650,7 @@ label{
     .contact-title{
         top: 0;
         background-color: var(--background);
+        transition: var(--transition-dark-mode);
         padding: 10px 0;
     }
     form{
@@ -515,65 +702,34 @@ label{
     }
 
     /* Modal */
-    #modal{
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: var(--modal-background); /* Black w/ opacity */
-
-    }
     #modal-content {
         height: 500px;
         display: flex;
-        margin: 15% auto; /* 15% from the top and centered */
-        width: 900px; /* Could be more or less, depending on screen size */
+        flex-direction: row;
+        margin: 15% auto;
+        width: 900px;
+    }
+    #modal .project-content, #modal .project-content p{
+        display: flex;
+        text-align: left;
+    }
+    #modal .project-technologies{
+        display: flex;
     }
     #modal #close-modal{
+        margin-top: 20px;
         background-color: rgb(196, 18, 5);
+        align-self: flex-end;
     }
     #modal-content .project-images{
         min-width: 360px;
-        width: 500px;
+        width: 00px;
         display: flex;
         flex-direction: column;
-        overflow-y: scroll;
-
-    }
-    #modal-content .project-images::-webkit-scrollbar {
-        display: none;
-    }
-    #modal-content .project-images img{
-        display: block;
-        height: 360px;
-        width: 360px;
-        display: flex;
-        margin: 0;
-        scroll-snap-align: start;
-        transition: 0.5s;
-        filter : drop-shadow(0px 0px 10px rgba(0,0,0,0.1))
+        overflow: hidden;
     }
 
-
-    #modal-content .project-images img:not(:first-child) {
-        margin-top: -310px;
-    }
     
-    #modal-content .project-images .project-image-1 {
-        z-index: 4;
-    }
-    #modal-content .project-images .project-image-2 {
-        z-index: 3;
-    }
-    #modal-content .project-images .project-image-3 {
-        z-index: 2;
-    }
-
-
 }
 
 /* --- Icones langages --- */
@@ -594,4 +750,42 @@ label{
 }
 .fa-react{
     color: #5CCFEE;
+}
+
+
+
+@keyframes slide_up {
+    0% {
+        transform: translateY(1000px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide_down {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide_left {
+    0% {
+        transform: translateX(-1000px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide_right {
+    0% {
+        transform: translateX(1000px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
