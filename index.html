@@ -18,19 +18,20 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <div class="dark-mode" id="darkmode">
-                <em class="fa-solid fa-circle-half-stroke" aria-label="Bouton dark mode"></em>
+                <button class="icon-button"><em class="fa-solid fa-circle-half-stroke" aria-label="Bouton dark mode"></em></button>
             </div>
             <div class="nav-mobile">
-                <em class="fa-solid fa-bars" aria-label="Menu de navigation" onclick="navMobile()"></em>
+                <button class="icon-button"><em class="fa-solid fa-bars" aria-label="Menu de navigation" onclick="navMobile()"></em></button>
             </div>
             <nav class="nav-mobile-menu">
-                <a href="#" class="nav-mobile-link">Accueil</a>
-                <a href="#about" class="nav-mobile-link">A propos</a>
-                <a href="#projects" class="nav-mobile-link">Projets</a>
-                <a href="#contact" class="nav-mobile-link">Contact</a>
+                <a href="#" class="nav-mobile-link" onclick="closeNav()">Accueil</a>
+                <a href="#about" class="nav-mobile-link" onclick="closeNav()">A propos</a>
+                <a href="#projects" class="nav-mobile-link" onclick="closeNav()">Projets</a>
+                <a href="#contact" class="nav-mobile-link" onclick="closeNav()">Contact</a>
             </nav>
         </div>
     </header>
+    
     <main>
         <section id="home" class="design">
             <p>Bienvenue sur mon portfolio je suis</p>
@@ -48,27 +49,40 @@
             </div>
         </section>
         <section id="about">
-            <div id="photo-profil" class="design">
-                <img    src="./images/profil.jpg" 
-                        alt="Photo de profil">
-            </div>
-            <div id="profil" class="design">
-                <p id="profil-firstname">Christopher</p>
-                <p id="profil-name">SEMARD</p>
-                <div id="line"></div>
-                <p>Développeur web et web mobile</p>
-                <p>En formation à <img id="afpa" src="./images/afpa.webp" alt="Logo de l'AFPA"></p>
-            </div>
             <div id="about-me" class="design">
-                <h2>A propos de moi</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                <div id="me">
+                    <h2>A propos de moi</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                </div>
+                <div id="competences">
+                    <h2>Mes compétences</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                </div>
+                <div id="experience">
+                    <h2>Mon expérience</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                </div>
             </div>
+            <aside>
+                <div id="profil" class="design">
+                    <p id="profil-firstname">Christopher</p>
+                    <p id="profil-name">SEMARD</p>
+                    <p>Développeur web et web mobile</p>
+                    <p>En formation à <img id="afpa" src="./images/afpa2.webp" alt="Logo de l'AFPA"></p>
+                </div>
+                <div id="photo-profil" class="design">
+                    <img    src="./images/profil.jpg" 
+                            alt="Photo de profil">
+                </div>
+            </aside>
         </section>
         <section id="projects">
             <div id="projects-title">
                 <h1>Mes projets</h1>
             </div>
-            
+            <div class="slide-icons">
+                <em class="fa-solid fa-mobile-screen"></em>
+            </div>
             <div id="projects-container">
                 <article>
                     <div class="project-left design">
@@ -176,7 +190,6 @@
     
     <div id="modal">
     </div>
-
 
     <script src="app.js"></script>
 </body>
