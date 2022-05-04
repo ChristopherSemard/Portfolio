@@ -207,13 +207,18 @@ header em:active{
     text-transform: uppercase;
     font-family: var(--font-title);
     font-weight: 400;
+    background: url("./images/animated.png") repeat-x;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: motif 40s linear infinite;
 }
 #home #home-lastname{
-    -webkit-text-stroke: 2px var(--primary);
     letter-spacing: 10px;
     font-family: var(--font-title);
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary);
+    -webkit-text-stroke: 1px var(--primary);
 }
 #home #home-socials{
     font-size: 1.2em;
@@ -535,11 +540,6 @@ label{
     }
     #home #home-name{
         font-size: 4em;
-        background: url("./images/animated.png") repeat-x;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: motif 40s linear infinite;
     }
     #home #home-socials{
         font-size: 1.5em;
@@ -839,7 +839,6 @@ label{
     #home #home-lastname{
         letter-spacing: 10px;
         font-family: var(--font-title);
-        font-weight: 700;
         color: var(--primary);
     }
     #home #home-socials{
