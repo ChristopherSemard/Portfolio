@@ -18,10 +18,10 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <div class="dark-mode" id="darkmode">
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <em class="fa-solid fa-circle-half-stroke" aria-label="Bouton dark mode"></em>
             </div>
             <div class="nav-mobile">
-                <i class="fa-solid fa-bars"></i>
+                <em class="fa-solid fa-bars" aria-label="Menu de navigation" onclick="navMobile()"></em>
             </div>
             <nav class="nav-mobile-menu">
                 <a href="#" class="nav-mobile-link">Accueil</a>
@@ -38,13 +38,13 @@
             <p>Développeur web et web mobile junior</p>     
             <p id="home-socials">Retrouvez moi sur</p>  
             <p id="home-socials-icons">
-                <a href="https://www.linkedin.com/in/christopher-semard-05b57021b/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/ChristopherSemard" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/christopher-semard-05b57021b/" target="_blank"><em class="fa-brands fa-linkedin"></em></a>
+                <a href="https://github.com/ChristopherSemard" target="_blank"><em class="fa-brands fa-github"></em></a>
             </p>
             
             <a id="apprendre-plus" href="#about"><p>En apprendre plus ></p></a>
             <div id="home-icon">
-                <i class="fa-solid fa-code"></i>
+                <em class="fa-solid fa-code"></em>
             </div>
         </section>
         <section id="about">
@@ -92,8 +92,8 @@
                                 <div class="project-technologies">
                                     <h3>Technologies</h4>
                                     <p>
-                                        <i class="fa-brands fa-html5"></i>
-                                        <i class="fa-brands fa-css3-alt"></i>
+                                        <em class="fa-brands fa-html5"></em>
+                                        <em class="fa-brands fa-css3-alt"></em>
                                     </p>
                                 </div>
                                 <a class="voir-github" href="https://github.com/ChristopherSemard/Booki---Exercice-integration-CSS" target="_blank"><button>Voir sur Github</button></a>
@@ -122,9 +122,9 @@
                                 <div class="project-technologies">
                                     <h3>Technologies</h4>
                                     <p>
-                                        <i class="fa-brands fa-html5"></i>
-                                        <i class="fa-brands fa-css3-alt"></i>
-                                        <i class="fa-brands fa-js"></i>
+                                        <em class="fa-brands fa-html5"></em>
+                                        <em class="fa-brands fa-css3-alt"></em>
+                                        <em class="fa-brands fa-js"></em>
                                     </p>
                                 </div>
                                 <a class="voir-github" href="https://github.com/ChristopherSemard/Kanap-JS" target="_blank"><button>Voir sur Github</button></a>
@@ -139,7 +139,7 @@
             <div class="contact-title">
                 <h1>Contact</h1>
             </div>
-            <form class="design form">
+            <form class="design form" onsubmit="validate()">
                 <label for="name">Prénom</label>
                 <input
                     type="text"
