@@ -118,7 +118,7 @@ header{
     content: '';
     background-color: var(--primary);
     height: 4px;
-    animation: slide_right  0.8s ease-in-out;
+    animation: slide_right  1s ease-in-out;
 }
 .nav-mobile-link{
     text-decoration: none;
@@ -130,20 +130,16 @@ header{
     background: var(--background);
 }
 .nav-anim-1 {
-    transition: 0.2s;
-    animation: slide_right  0.1s ease-in-out;
-}
-.nav-anim-2 {
-    transition: 0.4s;
     animation: slide_right  0.4s ease-in-out;
 }
-.nav-anim-3 {
-    transition: 0.6s;
+.nav-anim-2 {
     animation: slide_right  0.6s ease-in-out;
 }
-.nav-anim-4 {
-    transition: 0.8s;
+.nav-anim-3 {
     animation: slide_right  0.8s ease-in-out;
+}
+.nav-anim-4 {
+    animation: slide_right  1s ease-in-out;
 }
 
 .icon-button{
@@ -205,14 +201,15 @@ header em:active{
     line-height: 1.5em;
 }
 #home #home-name{
+    -webkit-text-stroke: 1px var(--primary);
     font-size: 2.5em;
     line-height: 1em;
     text-transform: uppercase;
     font-family: var(--font-title);
     font-weight: 400;
-    color: var(--primary);
 }
 #home #home-lastname{
+    -webkit-text-stroke: 2px var(--primary);
     letter-spacing: 10px;
     font-family: var(--font-title);
     font-weight: 700;
@@ -230,6 +227,10 @@ header em:active{
 
 #apprendre-plus{
     text-decoration: none;
+}
+#apprendre-plus:hover{
+    text-decoration: underline;
+    color: var(--primary);
 }
 #apprendre-plus p{
     text-decoration: none;
@@ -349,28 +350,18 @@ h2{
 }
 .slide-icons{
     position : absolute;
-    width: 10%;
+    display: flex;
     left: 50%;
     top: 101%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
+    text-align: center;
     transform: translate(-50%, -50%);
 }
 
 .slide-icons em{
     color: var(--primary);
     animation: slide_phone 3s infinite ease-in-out;
-    border: var(--background)2px solid;
+    border: var(--background) 2px solid;
     transition: 0.5s
-}
-.slide-icons::after{
-    content:'';
-    display: block;
-    height: 2px;
-    background-color: var(--primary-accent);
-    width: 100%;
 }
 
 #projects-container {
@@ -544,6 +535,11 @@ label{
     }
     #home #home-name{
         font-size: 4em;
+        background: url("./images/animated.png") repeat-x;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: motif 40s linear infinite;
     }
     #home #home-socials{
         font-size: 1.5em;
@@ -1019,10 +1015,10 @@ label{
     }
 
     /* Grid du formulaire */
-    form{
+    .form{
         width: calc(100% - 80px);
         margin: auto;
-        background-color: rgb(238, 238, 238);
+        background-color: var(--background-accent);
         display: grid;
         grid-gap: 10px;
         align-items: center;
@@ -1177,7 +1173,7 @@ label{
         transform: translateX(0%);
     }
     35% {
-        transform: translateX(150%);
+        transform: translateX(-100%);
     }
     50% {
         transform: translateX(0%);
@@ -1185,4 +1181,12 @@ label{
     100% {
         transform: translateX(0%);
     }
+}
+
+
+/* Animation nom accueil*/
+
+@keyframes motif {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
 }
