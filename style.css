@@ -409,7 +409,7 @@ label{
 
 /* Modal */
 #modal{
-    animation : slide_down 0.1s ease-in-out;
+    animation : slide_down 0.5s ease-in-out;
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -421,7 +421,7 @@ label{
     background-color: var(--modal-background);
 }
 #modal-content {
-    animation : slide_up 0.5s ease-in-out;
+    animation : slide_up 1s ease-in-out;
     height: 85vh;
     display: flex;
     flex-direction: column;
