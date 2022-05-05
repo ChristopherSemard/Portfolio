@@ -63,12 +63,12 @@ button, .voir-github{
     background-position: 0 100% ;
     transition: background-position 0.3s ease;
 }
-button:hover{
+button:hover, .voir-github:hover{
     transform: scale(0.98);
     background-position: 100% 0;
     border-bottom: 2px solid var(--primary);
 }
-button:active{
+button:active, .voir-github:active{
     transform: scale(0.95);
 }
 #close-modal{
