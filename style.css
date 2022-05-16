@@ -739,7 +739,7 @@ label {
 }
 
 /* ---------- DESKTOP ---------- */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
     /* --- Design général --- */
     h1 {
         font-size: 3em;
