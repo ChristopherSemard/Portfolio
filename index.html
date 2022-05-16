@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,77 +9,93 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c52cbb9b58.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <div class="header-content">
-            <nav class="nav-desktop">
-                <a href="#" class="nav-link">Accueil</a>
-                <a href="#about" class="nav-link">A propos</a>
-                <a href="#projects" class="nav-link">Projets</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-            <!-- Bouton dark mode -->
-            <div class="dark-mode" id="darkmode">
-                <button class="icon-button" aria-label="Bouton dark mode"><em class="fa-solid fa-circle-half-stroke"></em></button>
-            </div>
-            <!-- Menu nav mobile -->
-            <div class="nav-mobile">
-                <button class="icon-button" aria-label="Menu de navigation"><em class="fa-solid fa-bars" onclick="navMobile()"></em></button>
-            </div>
-            <nav class="nav-mobile-menu">
-                <a href="#" class="nav-mobile-link" onclick="closeNav()">Accueil</a>
-                <a href="#about" class="nav-mobile-link" onclick="closeNav()">A propos</a>
-                <a href="#projects" class="nav-mobile-link" onclick="closeNav()">Projets</a>
-                <a href="#contact" class="nav-mobile-link" onclick="closeNav()">Contact</a>
-            </nav>
+        <nav class="header-nav-desktop">
+            <a href="#">Accueil</a>
+            <a href="#about">A propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <!-- Bouton dark mode -->
+        <div class="header-dark-mode">
+            <button class="icon-button" aria-label="Bouton dark mode"><em
+                    class="fa-solid fa-circle-half-stroke"></em></button>
         </div>
+        <!-- Menu nav mobile -->
+        <div class="header-nav-mobile">
+            <button class="icon-button" aria-label="Menu de navigation"><em class="fa-solid fa-bars"
+                    onclick="navMobile()"></em></button>
+        </div>
+        <nav class="header-nav-mobile-menu">
+            <a href="#" class="header-nav-mobile-link" onclick="closeNav()">Accueil</a>
+            <a href="#about" class="header-nav-mobile-link" onclick="closeNav()">A propos</a>
+            <a href="#projects" class="header-nav-mobile-link" onclick="closeNav()">Projets</a>
+            <a href="#contact" class="header-nav-mobile-link" onclick="closeNav()">Contact</a>
+        </nav>
     </header>
-    
+
     <main>
         <!-- Accueil -->
         <section id="home" class="design">
-            <p>Bienvenue sur mon portfolio je suis</p>
-            <p id="home-name">Christopher <span id="home-lastname">Semard</span></p>           
-            <p>Développeur web et web mobile junior</p>     
-            <p id="home-socials">Retrouvez moi sur</p>  
-            <p id="home-socials-icons">
-                <a href="https://www.linkedin.com/in/christopher-semard-05b57021b/" target="_blank" aria-label="Lien LinkedIn"><em class="fa-brands fa-linkedin"></em></a>
-                <a href="https://github.com/ChristopherSemard" target="_blank" aria-label="Lien GitHub"><em class="fa-brands fa-github"></em></a>
+            <p>Bienvenue sur mon portfolio, je suis</p>
+            <p class="home-name">Christopher <span class="home-lastname">Semard</span></p>
+            <p>Développeur web et web mobile junior</p>
+            <p class="home-socials">Retrouvez moi sur</p>
+            <p class="home-socials-icons">
+                <a href="https://www.linkedin.com/in/christopher-semard-05b57021b/" target="_blank"
+                    aria-label="Lien LinkedIn"><em class="fa-brands fa-linkedin"></em></a>
+                <a href="https://github.com/ChristopherSemard" target="_blank" aria-label="Lien GitHub"><em
+                        class="fa-brands fa-github"></em></a>
             </p>
-            
-            <a id="apprendre-plus" href="#about"><p>En apprendre plus ></p></a>
-            <div id="home-icon">
+
+            <a class="home-apprendre-plus" href="#about">
+                <p>En apprendre plus ></p>
+            </a>
+            <div class="home-icon">
                 <em class="fa-solid fa-code"></em>
             </div>
         </section>
 
         <!-- A propos -->
         <section id="about">
-            <div id="about-me" class="design">
-                <div id="me">
+            <div class="about-cv design">
+                <div class="about-cv-me">
                     <h2>A propos de moi</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum
+                        reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi
+                        esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum
+                        excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!
+                    </p>
                 </div>
-                <div id="competences">
+                <div class="about-cv-competences">
                     <h2>Mes compétences</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum
+                        reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi
+                        esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum
+                        excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!
+                    </p>
                 </div>
-                <div id="experience">
+                <div class="about-cv-experience">
                     <h2>Mon expérience</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi vero officia sed harum
+                        reiciendis exercitationem tenetur tempora, temporibus deserunt ipsum maiores commodi. Nulla modi
+                        esse eveniet quisquam, recusandae maiores voluptatibus ad? Cum quidem doloribus, odit laborum
+                        excepturi suscipit molestias ipsum nulla nisi iure maiores placeat sint ducimus veritatis amet!
+                    </p>
                 </div>
             </div>
             <aside>
-                <div id="profil" class="design">
-                    <p id="profil-firstname">Christopher</p>
-                    <p id="profil-name">SEMARD</p>
+                <div class="about-profil design">
+                    <p class="about-profil-firstname">Christopher</p>
+                    <p class="about-profil-name">SEMARD</p>
                     <p>Développeur web et web mobile</p>
                     <p>En formation à <img id="afpa" src="./images/afpa2.webp" alt="Logo de l'AFPA"></p>
                 </div>
-                <div id="photo-profil" class="design">
-                    <img    src="./images/profil.jpg" 
-                            alt="Photo de profil">
+                <div class="about-photo-profil design">
+                    <img src="./images/profil.jpg" alt="Photo de profil">
                 </div>
             </aside>
         </section>
@@ -86,7 +103,7 @@
             <div id="projects-title">
                 <h1>Mes projets</h1>
             </div>
-            <div class="slide-icons">
+            <div class="projects-slide-icons">
                 <em class="fa-solid fa-angle-left"></em>
                 <em class="fa-solid fa-mobile-screen"></em>
                 <em></em>
@@ -95,20 +112,16 @@
                 <article>
                     <div class="project-left design">
                         <div class="project-images">
-                            <img    class="project-image-1"
-                                    src="./images/booki-1.png" 
-                                    alt="Logo Booki">
-                            <img    class="project-image-2"
-                                    src="./images/booki-2.png" 
-                                    alt="Page du site Booki">
-                            <img    class="project-image-3"
-                                    src="./images/booki-3.png" 
-                                    alt="Page du site Booki">
+                            <img class="project-image-1" src="./images/booki-1.png" alt="Logo Booki">
+                            <img class="project-image-2" src="./images/booki-2.png" alt="Page du site Booki">
+                            <img class="project-image-3" src="./images/booki-3.png" alt="Page du site Booki">
                         </div>
                         <div class="project-content">
                             <h2>Booki</h2>
                             <p class="project-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta velit iure aperiam voluptatibus est ipsam quia voluptatum facere, recusandae odit beatae voluptates necessitatibus itaque amet accusamus illum? Minima, iure!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta velit iure
+                                aperiam voluptatibus est ipsam quia voluptatum facere, recusandae odit beatae voluptates
+                                necessitatibus itaque amet accusamus illum? Minima, iure!
                             </p>
                             <div class="project-footer">
                                 <div class="project-technologies">
@@ -118,8 +131,10 @@
                                         <em class="fa-brands fa-css3-alt"></em>
                                     </p>
                                 </div>
-                                <a class="voir-github" href="https://github.com/ChristopherSemard/Booki---Exercice-integration-CSS" target="_blank">Voir sur Github</a>
-                                <button class="voir-plus" onClick="openModal(event);">Voir plus</button>
+                                <a class="project-voir-github"
+                                    href="https://github.com/ChristopherSemard/Booki---Exercice-integration-CSS"
+                                    target="_blank">Voir sur Github</a>
+                                <button class="project-voir-plus" onClick="openModal(event);">Voir plus</button>
                             </div>
                         </div>
                     </div>
@@ -127,19 +142,16 @@
                 <article>
                     <div class="project-right design">
                         <div class="project-images">
-                            <img    class="project-image-1"
-                                    src="./images/kanap-1.png" 
-                                    alt="Logo Kanap">
-                            <img    class="project-image-2"
-                                    src="./images/kanap-2.png" 
-                                    alt="Page du site Kanap">
-                            <img    class="project-image-3"
-                                    src="./images/kanap-3.png" 
-                                    alt="Page du site Kanap">
+                            <img class="project-image-1" src="./images/kanap-1.png" alt="Logo Kanap">
+                            <img class="project-image-2" src="./images/kanap-2.png" alt="Page du site Kanap">
+                            <img class="project-image-3" src="./images/kanap-3.png" alt="Page du site Kanap">
                         </div>
                         <div class="project-content">
                             <h2>Kanap</h2>
-                            <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dicta velit iure aperiam voluptatibus est ipsam quia voluptatum facere, recusandae odit beatae voluptates necessitatibus itaque amet accusamus illum? Minima, iure!</p>
+                            <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Debitis dicta velit iure aperiam voluptatibus est ipsam quia voluptatum facere,
+                                recusandae odit beatae voluptates necessitatibus itaque amet accusamus illum? Minima,
+                                iure!</p>
                             <div class="project-footer">
                                 <div class="project-technologies">
                                     <h3>Technologies</h3>
@@ -149,8 +161,9 @@
                                         <em class="fa-brands fa-js"></em>
                                     </p>
                                 </div>
-                                <a class="voir-github" href="https://github.com/ChristopherSemard/Kanap-JS" target="_blank">Voir sur Github</a>
-                                <button class="voir-plus" onClick="openModal(event);">Voir plus</button>
+                                <a class="project-voir-github" href="https://github.com/ChristopherSemard/Kanap-JS"
+                                    target="_blank">Voir sur Github</a>
+                                <button class="project-voir-plus" onClick="openModal(event);">Voir plus</button>
                             </div>
                         </div>
                     </div>
@@ -161,33 +174,16 @@
             <div class="contact-title">
                 <h1>Contact</h1>
             </div>
-            <form class="design form" onsubmit="validate()">
+            <form class="contact-form design" onsubmit="validate()">
                 <label for="name">Prénom</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required="required"
-                    placeholder="Votre prénom..."
-                />
+                <input type="text" name="name" id="name" required="required" placeholder="Votre prénom..." />
                 <label for="lastname">Nom</label>
-                <input
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                    required="required"
-                    placeholder="Votre nom..."
-                />
+                <input type="text" name="lastname" id="lastname" required="required" placeholder="Votre nom..." />
                 <label for="msg">Message</label>
-                <textarea
-                    name="msg"
-                    id="msg"
-                    required="required"
-                    placeholder="Ecrivez votre message ici..."
-                    rows="10"
-                ></textarea>
-                
-                <button id="send" type="submit">Envoyer</button>
+                <textarea name="msg" id="msg" required="required" placeholder="Ecrivez votre message ici..."
+                    rows="10"></textarea>
+
+                <button id="contact-send" type="submit">Envoyer</button>
             </form>
         </section>
     </main>
@@ -195,10 +191,11 @@
         <p>@2022 Christopher SEMARD</p>
     </footer>
 
-    
+
     <div id="modal">
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 // Switch thème clair / sombre
 let root = document.documentElement;
-let button = document.querySelector('#darkmode');
+let button = document.querySelector('.header-dark-mode');
 let afpa = document.querySelector('#afpa');
 let darkmode = 0;
 
@@ -131,20 +131,20 @@ function validate() {
 
 // Menu nav mobile
 function navMobile() {
-    var x = document.querySelector('.nav-mobile-menu');
+    var x = document.querySelector('.header-nav-mobile-menu');
     if (x.style.display === 'flex') {
         x.style.display = 'none';
     } else {
         x.style.display = 'flex';
-        var allNav = document.querySelectorAll('.nav-mobile-link');
+        var allNav = document.querySelectorAll('.header-nav-mobile-link');
         for (let i = 0; i < allNav.length; i++) {
             allNav[i].classList.add(`nav-anim-${i + 1}`);
         }
-        x.classList.add('nav-mobile-open');
+        x.classList.add('header-nav-mobile-open');
     }
 }
 
 function closeNav() {
-    var x = document.querySelector('.nav-mobile-menu');
+    var x = document.querySelector('.header-nav-mobile-menu');
     x.style.display = 'none';
 }
