@@ -456,9 +456,10 @@ label {
 }
 #modal .project-technologies,
 #modal .project-content,
-#modal .project-content p {
+#modal .project-content > p {
     display: block;
     text-align: center;
+    font-size: 0.9em;
 }
 
 /* Modal Images */
@@ -725,6 +726,7 @@ label {
     }
     #modal .project-content p {
         line-height: 1.5em;
+        font-size: 1.1em;
     }
     #modal .project-technologies {
         margin-top: 20px;
@@ -903,12 +905,16 @@ label {
         flex-direction: row;
         justify-content: space-between;
     }
+    #about h2 {
+        margin-bottom: 15px;
+    }
     .about-photo-profil,
     .about-profil {
         height: 400px;
     }
     .about-photo-profil {
         width: 400px;
+        height: 100%;
     }
     #about aside {
         order: 0;
@@ -942,9 +948,11 @@ label {
     .about-cv-me,
     .about-cv-experience {
         text-align: left;
+        line-height: 1.4em;
     }
     .about-cv-competences {
         text-align: right;
+        line-height: 1.4em;
     }
     .about-cv-me::after,
     .about-cv-competences::after {
@@ -1102,9 +1110,11 @@ label {
         flex-direction: row;
         width: 900px;
     }
-    #modal .project-content,
-    #modal .project-content p {
+    #modal .project-content {
         display: flex;
+        text-align: left;
+    }
+    #modal .project-content p {
         text-align: left;
     }
     #modal .project-content {
@@ -1155,6 +1165,12 @@ label {
 }
 .fa-react {
     color: #5ccfee;
+}
+.fa-bootstrap {
+    color: #7d11f0;
+}
+.fa-database {
+    color: #000000;
 }
 
 /* Icones sociales */
