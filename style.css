@@ -956,7 +956,7 @@ label {
     }
     .about-cv-me::after,
     .about-cv-competences::after {
-        margin-top: 60px;
+        margin-top: 20px;
         height: 3px;
     }
     .about-profil-name::after {
