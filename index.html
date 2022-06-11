@@ -42,7 +42,7 @@
         <section id="home" class="design">
             <p>Bienvenue sur mon portfolio, je suis</p>
             <p class="home-name">Christopher <span class="home-lastname">Semard</span></p>
-            <p>Développeur web et web mobile junior</p>
+            <p>Développeur web et web mobile junior en formation</p>
             <p class="home-socials">Retrouvez moi sur</p>
             <p class="home-socials-icons">
                 <a href="https://www.linkedin.com/in/christopher-semard-05b57021b/" target="_blank"
@@ -97,6 +97,9 @@
                     <p class="about-profil-name">SEMARD</p>
                     <p>Développeur web et web mobile</p>
                     <p>En formation à <img id="afpa" src="./images/afpa2.webp" alt="Logo de l'AFPA"></p>
+                    <a href="./images/CV_Christopher_SEMARD.pdf">
+                        <p>Voir mon CV</p>
+                    </a>
                 </div>
                 <div class="about-photo-profil design">
                     <img src="./images/profil.jpg" alt="Photo de profil">
@@ -209,7 +212,7 @@
                                     </p>
                                 </div>
                                 <a class="project-voir-github"
-                                    href="https://github.com/ChristopherSemard/Booki---Exercice-integration-CSS"
+                                    href="https://github.com/ChristopherSemard/Mini-Tchat-PHP-MVC-POO"
                                     target="_blank">Voir sur Github</a>
                                 <button class="project-voir-plus" onClick="openModal(event);">Voir plus</button>
                             </div>
@@ -247,8 +250,7 @@
                                         <em class="fa-brands fa-css3-alt"></em>
                                     </p>
                                 </div>
-                                <a class="project-voir-github"
-                                    href="https://github.com/ChristopherSemard/Booki---Exercice-integration-CSS"
+                                <a class="project-voir-github" href="https://github.com/ChristopherSemard/GBAF"
                                     target="_blank">Voir sur Github</a>
                                 <button class="project-voir-plus" onClick="openModal(event);">Voir plus</button>
                             </div>
@@ -297,14 +299,16 @@
             <div class="contact-title">
                 <h1>Contact</h1>
             </div>
+            <h2>Contactez moi par mail christophersemard76@gmail.com</h2>
             <form class="contact-form design" onsubmit="validate()">
                 <label for="name">Prénom</label>
-                <input type="text" name="name" id="name" required="required" placeholder="Votre prénom..." />
+                <input type="text" name="name" id="name" required="required" placeholder="Votre prénom..." disabled />
                 <label for="lastname">Nom</label>
-                <input type="text" name="lastname" id="lastname" required="required" placeholder="Votre nom..." />
+                <input type="text" name="lastname" id="lastname" required="required" placeholder="Votre nom..."
+                    disabled />
                 <label for="msg">Message</label>
-                <textarea name="msg" id="msg" required="required" placeholder="Ecrivez votre message ici..."
-                    rows="10"></textarea>
+                <textarea name="msg" id="msg" required="required" placeholder="Ecrivez votre message ici..." rows="10"
+                    disabled></textarea>
 
                 <button id="contact-send" type="submit">Envoyer</button>
             </form>
