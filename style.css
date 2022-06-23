@@ -1000,6 +1000,9 @@ label {
         order: 2;
         border-radius: var(--border-radius-desktop-right);
     }
+    .project-right .project-content {
+        width: 100%;
+    }
     .project-right {
         border-radius: var(--border-radius-desktop-right);
     }
